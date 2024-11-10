@@ -1,0 +1,82 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css.css">
+    <script>
+        // Predefined list of task names for random selection
+        const taskNames = [
+            "Complete Assignment",
+            "Buy Groceries",
+            "Clean the House",
+            "Schedule Meeting",
+            "Read Book",
+            "Go for a Run",
+            "Prepare Dinner",
+            "Finish Project",
+            "Call Mom",
+            "Pay Bills"
+        ];
+
+        // Predefined list of emails for random selection
+        const emails = [
+            "john.doe@example.com",
+            "jane.smith@example.com",
+            "michael.jones@example.com",
+            "susan.miller@example.com",
+            "david.wilson@example.com",
+            "lisa.moore@example.com",
+            "james.brown@example.com",
+            "emma.davis@example.com",
+            "noah.garcia@example.com",
+            "olivia.martinez@example.com"
+        ];
+
+        // Function to generate random data
+        function mockData() {
+            // Select a random task name from the predefined list
+            const taskName = taskNames[Math.floor(Math.random() * taskNames.length)];
+
+            // Select a random email from the predefined list
+            const email = emails[Math.floor(Math.random() * emails.length)];
+
+            // Predefined list of priorities
+            const priorities = ["Low", "Medium", "High"];
+            const priority = priorities[Math.floor(Math.random() * priorities.length)];  // Random priority
+
+            // Set the random values into the form fields
+            document.getElementById('taskName').value = taskName;
+            document.getElementById('email').value = email;
+            document.getElementById('priority').value = priority;
+        }
+    </script>
+</head>
+<body>
+    <div class="top-banner">
+        Ivan Martinez - Week 11 Assignment
+    </div>
+
+    <form class="send-form" action="/submit" method="post">
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName" name="taskName">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="priority">Priority:</label>
+        <select name="priority" id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <hr>
+
+        <button class="btn_send" type="submit">Add ToDo Item</button>
+    </form>
+
+    <!-- Mock Data Button -->
+    <br>
+    <br>
+
+    <button class="btn_send" onclick="mockData()">Mock Data</button>
+
+</body>
+</html>

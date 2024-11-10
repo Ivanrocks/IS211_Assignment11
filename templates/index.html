@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css.css">
+    <script>
+    // Wait for the DOM to be fully loaded before running the script
+    window.addEventListener('DOMContentLoaded', function () {
+        // Find all flash messages
+        var flashMessages = document.querySelectorAll('.alert');
+
+        // For each flash message, set a timer to fade it out after 5 seconds
+        flashMessages.forEach(function (message) {
+            setTimeout(function () {
+                message.style.transition = 'opacity 1s';  // Smooth fade out
+                message.style.opacity = '0';
+                // After fading out, remove the message from the DOM
+                setTimeout(function () {
+                    message.remove();
+                }, 1000);  // After 1 second (fade duration), remove the message
+            }, 5000);  // Wait for 5 seconds before starting fade out
+        });
+    });
+</script>
+    <title>Assignment - Week 11</title>
+</head>
+
+<body>
+<div class="top-banner">
+    Ivan Martinez - Week 11 Assignment
+</div>
+    <h2>Your Todo List</h2>
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div>
+                {% for category, message in messages %}
+                    <div class="alert {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Description</td>
+            <td>
+                Email
+            </td>
+            <td>
+                Priority
+            </td>
+        </tr>
+        
+    </thead>
+    <tbody>
+
+    {% for task in tasks%}
+            <tr>
+                <td>{{task[0]}}</td>
+                <td>{{task[1]}}</td>
+                <td>{{task[2]}}</td>
+                <td>{{task[3]}}</td>
+                <td>
+                <!-- Delete Button -->
+                <form action="{{ url_for('delete_task', task_id=task[0]) }}" method="POST">
+                    <button type="submit" class=" btn_del btn btn-danger">Delete</button>
+                </form>
+            </td>
+            </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="/clear">Clear List</a>
+
+    </li>
+    <li>
+        <a href="/submit">Add TODO</a>
+    </li>
+    <li>
+        <a href="/save">Save</a>
+    </li>
+</ul>
+
+</body>
+
+</html>

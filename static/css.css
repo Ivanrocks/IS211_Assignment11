@@ -1,0 +1,172 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    padding-top: 60px;  /* Adjust based on the height of your banner */
+
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #2c3e50;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+thead {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+td, th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button Styles */
+.btn_send  {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn_del {
+    padding: 8px 16px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #3498db;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #2980b9;
+}
+
+/* Flash message styles */
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.error {
+    background-color: #f44336;
+    color: white;
+}
+.send-form {
+    width: 300px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the form labels */
+label {
+    font-size: 16px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Styling the form input fields */
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Styling the button */
+
+
+/* Styling the horizontal line */
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+/* Styling for the top banner */
+.top-banner {
+    background-color: #333;  /* Dark background color */
+    color: white;  /* White text color */
+    text-align: center;  /* Center the text */
+    padding: 10px 0;  /* Padding for vertical space */
+    font-size: 20px;  /* Font size */
+    font-weight: bold;  /* Make the text bold */
+    position: fixed;  /* Fixed position at the top of the page */
+    top: 0;  /* Align at the very top */
+    left: 0;  /* Align to the left */
+    width: 100%;  /* Full width */
+    z-index: 1000;  /* Ensure it's on top of other elements */
+}
+
+
